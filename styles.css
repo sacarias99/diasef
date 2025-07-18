@@ -1,63 +1,89 @@
+/* Reset básico */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Fondo con degradado suave */
 body {
   background: linear-gradient(to bottom, #fffde4, #f9e6e9);
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   min-height: 100vh;
   overflow: hidden;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.container {
-  text-align: center;
   padding: 20px;
-  max-width: 90%;
-  z-index: 1;
+}
+
+/* Contenedor principal */
+.container {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 25px;
+  box-shadow: 0 8px 20px rgba(192, 72, 72, 0.3);
+  max-width: 380px;
+  width: 100%;
+  text-align: center;
+  padding: 30px 25px 40px;
   position: relative;
+  z-index: 1;
 }
 
+/* Título */
 h1 {
-  font-size: 2.2em;
+  font-size: 2.4rem;
   color: #c04848;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
+/* Submensajes */
 .submensaje {
-  font-size: 1.1em;
+  font-size: 1.1rem;
   color: #5e4b56;
-  margin-bottom: 20px;
+  margin-bottom: 14px;
+  line-height: 1.4;
 }
 
+/* Imagen caricatura */
 .imagen-caricatura {
   width: 90%;
-  max-width: 300px;
+  max-width: 280px;
   border-radius: 20px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 20px rgba(192, 72, 72, 0.3);
   margin-bottom: 25px;
+  user-select: none;
 }
 
-button {
-  padding: 12px 25px;
-  font-size: 1em;
-  background-color: #ffccd5;
+/* Botón reproducir música */
+#btnPlay {
+  padding: 15px 35px;
+  font-size: 1.3rem;
+  background: linear-gradient(135deg, #ff6b81, #ff8fa3);
+  color: white;
   border: none;
-  border-radius: 25px;
+  border-radius: 30px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  box-shadow: 0 6px 18px rgba(255, 107, 129, 0.6);
+  transition: background 0.4s ease, box-shadow 0.4s ease, transform 0.2s ease;
+  user-select: none;
 }
 
-button:hover {
-  background-color: #ffb3c6;
+#btnPlay:hover {
+  background: linear-gradient(135deg, #ff8fa3, #ff6b81);
+  box-shadow: 0 10px 25px rgba(255, 143, 163, 0.8);
+  transform: scale(1.05);
 }
 
-/* CORAZONES flotando desde el fondo */
+/* Ocultar reproductor nativo */
+audio {
+  display: none;
+}
+
+/* Corazones flotantes (fondo) */
 .fondo-corazones {
   position: fixed;
   top: 0;
@@ -71,8 +97,8 @@ button:hover {
 
 .corazon {
   position: absolute;
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   background-color: #ff6b81;
   transform: rotate(45deg);
   opacity: 1;
@@ -83,19 +109,19 @@ button:hover {
 .corazon::after {
   content: '';
   position: absolute;
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   background-color: #ff6b81;
   border-radius: 50%;
 }
 
 .corazon::before {
-  top: -10px;
+  top: -11px;
   left: 0;
 }
 
 .corazon::after {
-  left: -10px;
+  left: -11px;
   top: 0;
 }
 
@@ -107,5 +133,30 @@ button:hover {
   100% {
     transform: translateY(-120vh) rotate(45deg);
     opacity: 0;
+  }
+}
+
+/* Responsive para móviles */
+@media (max-width: 400px) {
+  .container {
+    max-width: 90vw;
+    padding: 25px 20px 35px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .submensaje {
+    font-size: 1rem;
+  }
+
+  #btnPlay {
+    font-size: 1.1rem;
+    padding: 14px 28px;
+  }
+
+  .imagen-caricatura {
+    max-width: 240px;
   }
 }

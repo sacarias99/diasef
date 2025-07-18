@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Buenos días, amorcito 🥰</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -10,12 +10,14 @@
   <div class="container">
     <h1>Buenos días, amorcito 🥰</h1>
     <p class="submensaje">Que tengas un día tan hermoso como tú 💛</p>
-    <p class="submensaje">Está canción me recuerda mucho a ti 🫶</p>
+    <p class="submensaje">Esta canción me recuerda mucho a ti 🫶</p>
 
     <img src="im/img1.jpeg" alt="Nosotros 💚" class="imagen-caricatura" />
 
-    <audio autoplay loop>
-      <source src="aud1.mpeg" type="audio/mpeg" />
+    <button id="btnPlay">Reproducir música 🎵</button>
+
+    <audio id="miAudio" loop>
+      <source src="aud1.mp3" type="audio/mpeg" />
       Tu navegador no soporta el audio.
     </audio>
   </div>

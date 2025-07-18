@@ -1,4 +1,3 @@
-
 // Crear fondo con corazones flotando
 const fondo = document.createElement("div");
 fondo.classList.add("fondo-corazones");
@@ -20,3 +19,17 @@ for (let i = 0; i < 30; i++) {
 
   fondo.appendChild(corazon);
 }
+
+// Control botón reproducir música
+const audio = document.getElementById('miAudio');
+const btnPlay = document.getElementById('btnPlay');
+
+btnPlay.addEventListener('click', () => {
+  audio.play()
+    .then(() => {
+      btnPlay.style.display = 'none'; // Oculta botón al reproducir
+    })
+    .catch(error => {
+      console.log('Error al reproducir:', error);
+    });
+});
